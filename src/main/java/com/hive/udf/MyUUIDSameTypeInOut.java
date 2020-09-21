@@ -1,0 +1,30 @@
+package com.hive.udf;
+
+import org.apache.hadoop.hive.ql.metadata.HiveException;
+import org.apache.hadoop.hive.ql.udf.generic.GenericUDF;
+import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
+import org.apache.hadoop.hive.serde2.objectinspector.primitive.WritableIntObjectInspector;
+/**
+ * Author:BYDylan
+ * Date:2020/9/21
+ * Description: 传入传出参数类型一样的版本
+ */
+class MyUUIDSameTypeInOut extends GenericUDF {
+    private WritableIntObjectInspector input;
+
+    public ObjectInspector initialize(ObjectInspector[] args) {
+        input = (WritableIntObjectInspector) args[0];
+        return input;
+    }
+
+    public Object evaluate(DeferredObject[] args) throws HiveException {
+        String uuid = "123456789";
+        Object o = args[0].get();
+
+        return uuid.substring(0, input.get(o));
+    }
+
+    public String getDisplayString(String[] args) {
+        return "Here, write a nice description";
+    }
+}
