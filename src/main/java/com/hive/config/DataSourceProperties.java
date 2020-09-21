@@ -19,5 +19,5 @@ import java.util.Map;
 class DataSourceProperties {
     final static String DS = "spring.datasource";
     private Map<String, String> hive;
-    private Map<String, String> commonconfig;
+    private Map<String, String> common;
 }

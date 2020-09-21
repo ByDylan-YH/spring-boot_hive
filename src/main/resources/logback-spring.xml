@@ -14,7 +14,7 @@
         <encoder>
             <!--<pattern>%d %p (%file:%line\)- %m%n</pattern>-->
             <!--格式化输出：%d:表示日期    %thread:表示线程名     %-5level:级别从左显示5个字符宽度  %msg:日志消息    %n:是换行符-->
-            <pattern>%red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%-5logger{10}) - %cyan(%msg%n)</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%highlight(%level)] [%-40.40logger{36}] - %black(%msg%n)</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
@@ -29,7 +29,7 @@
         </rollingPolicy>
         <encoder>
             <!--格式化输出：%d:表示日期    %thread:表示线程名     %-5level:级别从左显示5个字符宽度  %msg:日志消息    %n:是换行符-->
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%p] - [%c] %m%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %boldMagenta(%logger{10}) - [%c] %m%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>

@@ -15,7 +15,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @AllArgsConstructor
 @ConfigurationProperties(prefix = DataSourceCommonProperties.DS, ignoreUnknownFields = false)
 class DataSourceCommonProperties {
-    final static String DS = "spring.datasource.commonconfig";
+    final static String DS = "spring.datasource.common.config";
 
     private int initialSize = 10;
     private int minIdle;

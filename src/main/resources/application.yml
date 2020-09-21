@@ -6,18 +6,19 @@ spring:
       username: root
       password:
       driver-class-name: org.apache.hive.jdbc.HiveDriver
-    commonconfig:
-      initialSize: 1
-      minIdle: 1
-      maxIdle: 5
-      maxActive: 50
-      maxWait: 10000
-      timeBetweenEvictionRunsMillis: 10000
-      minEvictableIdleTimeMillis: 300000
-      validationQuery: select * from hive.test_hive
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      poolPreparedStatements: true
-      maxOpenPreparedStatements: 20
-      filters: stat
+    common:
+      config:
+        initialSize: 1
+        minIdle: 1
+        maxIdle: 5
+        maxActive: 50
+        maxWait: 10000
+        timeBetweenEvictionRunsMillis: 10000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select * from hive.test_hive
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+        filters: stat

@@ -41,7 +41,7 @@ public class HiveDruidConfig {
     @Qualifier("hiveDruidDataSource")//标识
     public DataSource dataSource(){
         DruidDataSource datasource = new DruidDataSource();
-
+        System.out.println(dataSourceProperties);
         //配置数据源属性
         datasource.setUrl(dataSourceProperties.getHive().get("url"));
         datasource.setUsername(dataSourceProperties.getHive().get("username"));

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class TestHiveDao extends HiveJdbcBaseDaoImpl {
     public String test() {
-        String sql = "select id,`name` from hive.test_hive limit 1";
+        String sql = "select `name` from hive.test_hive limit 1";
         this.getJdbcTemplate().execute(sql);
         return this.getJdbcTemplate().queryForObject(sql, String.class);
     }
